@@ -1,0 +1,124 @@
+/*
+  -------- Fonts & icons --------
+*/
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone");
+
+/*
+  -------- Tailwind directives --------
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /*
+    -------- Variables --------
+    */
+
+    /* normal */
+    --semantic-neutral-0: theme("colors[white]");
+    --semantic-neutral-10: theme("colors[gray[10]]");
+    --semantic-neutral-20: theme("colors[gray[20]]");
+
+    /* contrast */
+    --semantic-contrast-0: theme("colors[black]");
+    --semantic-contrast-10: theme("colors[gray[100]]");
+    --semantic-contrast-20: theme("colors[gray[90]]");
+
+    /* primary */
+    --semantic-primary-55: theme("colors[blue[55]]");
+    --semantic-primary-70: theme("colors[blue[70]]");
+
+    /* accent */
+
+    /* background opacity */
+    --tw-bg-opacity: 1;
+
+    /* default page padding */
+    --page-padding-x: theme("spacing[page-padding-screen-md]");
+    --page-padding-y: theme("spacing[10]");
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    @apply from-blue-60 to-turquoise-55 bg-gradient-to-r;
+  }
+
+  /*
+  -------- Page padding --------
+  */
+
+  @variants responsive {
+    .page-padding-screen-sm {
+      --page-padding-x: theme("spacing[page-padding-screen-sm]");
+    }
+    .page-padding-screen-md {
+      --page-padding-x: theme("spacing[page-padding-screen-md]");
+    }
+    .page-padding-screen-lg {
+      --page-padding-x: theme("spacing[page-padding-screen-lg]");
+    }
+    .page-padding-screen-xl {
+      --page-padding-x: theme("spacing[page-padding-screen-xl]");
+    }
+  }
+  .responsive-page-padding {
+    @apply page-padding-screen-sm sm:page-padding-screen-sm md:page-padding-screen-md lg:page-padding-screen-lg xl:page-padding-screen-xl;
+  }
+
+  /*
+  -------- Theming --------
+  */
+
+  .dark {
+    /* TODO */
+  }
+
+  /*
+  -------- Icons --------
+  Since two-tone material icons are botched we have to apply the colors with a filter.
+  https://stackoverflow.com/a/60827444/10182880
+  https://codepen.io/sosuke/pen/Pjoqqp
+  */
+
+  /* turquoise-70 */
+  i.material-icons-two-tone.primary {
+    filter: invert(45%) sepia(74%) saturate(501%) hue-rotate(135deg)
+      brightness(92%) contrast(92%);
+  }
+  /* white */
+  i.material-icons-two-tone.neutral {
+    filter: invert(100%);
+  }
+  /* orange-70 */
+  i.material-icons-two-tone.error {
+    filter: invert(61%) sepia(58%) saturate(5444%) hue-rotate(354deg)
+      brightness(95%) contrast(91%);
+  }
+}
+
+.focus-ring {
+  @apply outline-none focus:ring-2 focus:ring-semantic-primary-55;
+}
+
+@layer components {
+  /*
+  -------- Typography --------
+  */
+
+  .title {
+    @apply text-6xl text-semantic-contrast-0 font-serif leading-none;
+  }
+  .eyebrow {
+    @apply text-2xl text-semantic-contrast-10 font-sans font-bold uppercase tracking-tight leading-none;
+  }
+  .input-label {
+    @apply leading-none text-sm font-medium;
+  }
+  .input-error {
+    @apply text-sm text-orange-55 leading-none;
+  }
+}

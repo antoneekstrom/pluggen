@@ -1,0 +1,85 @@
+module.exports = {
+  content: ["index.html", "src/**/*.tsx"],
+  theme: {
+    fontFamily: {
+      sans: "Work Sans",
+      serif: "Playfair Display",
+      code: "Fira Code",
+    },
+    colors: {
+      "semantic-neutral": {
+        0: "var(--semantic-neutral-0)",
+        10: "var(--semantic-neutral-10)",
+        20: "var(--semantic-neutral-20)",
+      },
+      "semantic-contrast": {
+        0: "var(--semantic-contrast-0)",
+        10: "var(--semantic-contrast-10)",
+        20: "var(--semantic-contrast-20)",
+      },
+      "semantic-primary": {
+        55: "var(--semantic-primary-55)",
+        70: "var(--semantic-primary-70)",
+      },
+      black: "#000000",
+      white: "#ffffff",
+      gray: {
+        100: "#0D1414",
+        90: "#141F20",
+        80: "#1F2B2D",
+        70: "#2E3C3F",
+        60: "#546265",
+        50: "#93A5A5",
+        40: "#B4C8C8",
+        30: "#D8DEDE",
+        20: "#E9ECEC",
+        10: "#F8F8F8",
+      },
+      turquoise: {
+        70: "#1298A1",
+        55: "#09CDDA",
+        50: "#5DE6EF",
+      },
+      blue: {
+        100: "#23383E",
+        90: "#2B535E",
+        80: "#266373",
+        70: "#1284A1",
+        60: "#00A9D3",
+        55: "#00A9D3",
+        50: "#5DD2EF",
+        40: "#A4E4F4",
+        30: "#D0EEF6",
+        20: "#EAF7FA",
+        10: "#F3FAFC",
+      },
+      orange: {
+        55: "#FA6607",
+        70: "#E76817",
+      },
+    },
+    fontWeight: {
+      regular: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+      extrabold: 800,
+    },
+    extend: {
+      spacing: {
+        "page-padding-x": "var(--page-padding-x)",
+        "page-padding-y": "var(--page-padding-y)",
+        "page-padding-screen-sm": "2rem",
+        "page-padding-screen-md": "4rem",
+        "page-padding-screen-lg": "8rem",
+        "page-padding-screen-xl": "16rem",
+      },
+      width: {
+        "input-sm": "8ch",
+        "input-md": "16ch",
+        "input-lg": "24ch",
+      },
+    },
+  },
+  plugins: [],
+};
